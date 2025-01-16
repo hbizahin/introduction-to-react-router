@@ -13,6 +13,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    // error: <ErrorPage></ErrorPage>,
+    // eta use korbo jokhon oi route ta thakbe na and pore ErrorPage theke jei likha
+    // thakbe seta dekhabe
+
+    // NavLink (active) use korbo jodi amra dekhtate chai CSS kore 
     children: [
       {
         path: "/about",
@@ -25,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/users",
         loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        // loader data load kore and useLoaderData diye data pass kore
         element: <Users></Users>,
       },
     ],
